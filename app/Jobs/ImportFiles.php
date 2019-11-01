@@ -35,8 +35,6 @@ class ImportFiles implements ShouldQueue
     {
 
         $file = FileImport::where('name',$this->fileName)->first();
-
-
         try {
             $file->status = 'processing';
             $file->save();
@@ -46,13 +44,12 @@ class ImportFiles implements ShouldQueue
             while (($line = fgets($processFile)) !== false) {
                 $this->makeJsonLead(str_getcsv($line), $head, $file->origin,$file->config);
             }
-
             fclose($processFile);
             if($file->origin == 'sharp-spring-file'){
                 DB::table('leads')->truncate();
                 ProcessMetaData::dispatch($file, $file->origin);
             }elseif($file->origin == 'sharp-spring-opp'){
-                if($file->config['deleteAllOpp']){
+                if(isset($file->config['deleteAllOpp'])){
                     DB::table('opportunities')->truncate();
                 }
                 ProcessMetaData::dispatch($file,'sharp-spring-opp',$file->config['brand']);
