@@ -65,7 +65,7 @@ class ImportFiles implements ShouldQueue
                 $file->status = 'fail';
                 $file->save();
             }
-            echo 'Nothing to import';
+            echo $e->getMessage();
         }
 
     }
