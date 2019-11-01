@@ -27,6 +27,7 @@ class AdminController
     public function importFile(Request $request)
     {
 
+
         $fileName = Str::random(10) . "." . $request->fileImport->extension();
         $request->fileImport->storeAs('public/import', $fileName);
         $insertFile = [
@@ -41,6 +42,8 @@ class AdminController
             ];
             $insertFile['config'] = $config;
         }
+
+
         FileImport::create($insertFile);
         ImportFiles::dispatch($fileName);
         return redirect(route('leads'))->with('status','O arquivo será processado');

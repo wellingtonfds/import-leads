@@ -35,6 +35,7 @@ class ImportFiles implements ShouldQueue
     {
 
         $file = FileImport::where('name',$this->fileName)->first();
+
         try {
             $file->status = 'processing';
             $file->save();
@@ -49,7 +50,7 @@ class ImportFiles implements ShouldQueue
                 DB::table('leads')->truncate();
                 ProcessMetaData::dispatch($file, $file->origin);
             }elseif($file->origin == 'sharp-spring-opp'){
-                if(isset($file->config['deleteAllOpp'])){
+                if($file->config['deleteAll']){
                     DB::table('opportunities')->truncate();
                 }
                 ProcessMetaData::dispatch($file,'sharp-spring-opp',$file->config['brand']);
