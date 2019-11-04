@@ -65,7 +65,7 @@ class SharpSpringSource extends SourceDataAbstract implements SourceData
      */
     private function parseDataToSharpSpringStructureJson($data): Array
     {
-        $newArray =  [
+        return [
             "id" => $data['sharpspring_id'],
             "city" => $data['city'],
             "state" => $data['state'],
@@ -117,7 +117,6 @@ class SharpSpringSource extends SourceDataAbstract implements SourceData
             "motivo_de_finaliza____o_do_contato_5d1cdeda7794e" => $data['motivo_de_finalizaoao_do_contato']
 
         ];
-        return $data;
     }
 
     /**
