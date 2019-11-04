@@ -84,6 +84,7 @@ class SharpSpringSource extends SourceDataAbstract implements SourceData
             "firstName" => $data['first_name'],
             "leadScore" => $data['lead_score'],
             "campaignID" => $data['primary_campaign_id'],
+            "campaignName" => $data['primary_campaign_name'],
             "leadStatus" => $data['lead_status'],
             "trackingID" => null,
             "companyName" => $data['company_name'],
@@ -149,7 +150,7 @@ class SharpSpringSource extends SourceDataAbstract implements SourceData
 
         $leadCheck = Lead::where('id_source_data', $value[$positionData['id_source_data']])->first();
 
-        
+
         $created_at = new Carbon($value[$positionData['created_source_data']]);
         $updated_at = new Carbon($value[$positionData['updated_source_data']]);
 
