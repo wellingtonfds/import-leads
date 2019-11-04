@@ -108,7 +108,7 @@ class OpportunityServices implements ServiceLayer
             "accountID" => "",
             "closeDate" => $data['close_date'],
             "campaignID" => "",
-            "campaignName" => $data['campaign_name'],
+            "campaignName" => "",
             "dealStageID" => $data['deal_stage_id'],
             "probability" => $data['probability'],
             "primaryLeadID" => $data['primary_lead_id'],
