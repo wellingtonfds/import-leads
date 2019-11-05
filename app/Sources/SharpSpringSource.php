@@ -74,6 +74,7 @@ class SharpSpringSource extends SourceDataAbstract implements SourceData
             "street" => $data['street'],
             "country" => $data['country'],
             "ownerID" => $data['owner_id'],
+            "leadOwner" => $data['lead_owner'],
             "persona" => null,
             "website" => $data['website'],
             "zipcode" => $data['zip'],

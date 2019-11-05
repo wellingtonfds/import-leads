@@ -103,6 +103,8 @@ class OpportunityServices implements ServiceLayer
             "isWon" => $data['is_won'],
             "amount" => $data['amount'],
             "ownerID" => $data['owner_id'],
+            "ownerName" => $data['owner_name'],
+            "ownerEmail" => $data['owner_email'],
             "isActive" => "",
             "isClosed" => $data['is_closed'],
             "accountID" => "",
@@ -135,7 +137,6 @@ class OpportunityServices implements ServiceLayer
             "comprovante_de_pagamento_n__2_5d14bd2546b80" => $data['comprovante_de_pagamento_nº2'],
             "comprovante_de_pagamento_n__3_5d14bd449c4ac" => $data['comprovante_de_pagamento_nº3'],
             "comprovante_de_pagamento_n__4_5d14bd5094890" => $data['comprovante_de_pagamento_nº4'],
-            "nome_completo_frente_opera____o_5d2e3423739ed" => $data['nome_completo/frente_operaoao'],
             "modalidade_da_franquia_escolhida_5d1e112bc1933" => $data['modalidade_da_franquia_escolhida'],
             "data_da_mudan__a_para_primeiro_retorno__5d276aac095e5" => $data['data_do_primeiro_contato']
         ];
