@@ -73,7 +73,7 @@ class ImportFiles implements ShouldQueue
         $newLead = [];
         foreach ($head as $key => $value) {
             if ($value != "\n") {
-                $newLead[$this->normalizeHead($value)] = $this->normalizeHead($lead[$key]);
+                $newLead[$this->normalizeHead($value)] = $lead[$key];
             }
         }
         Metadata::create([
